@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-red: #e63027;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  background-color: #f5f5f0;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
