@@ -6,8 +6,8 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
   if (filtered.length === 0) {
     return (
       <div
+        className="content-frame"
         style={{
-          viewTransitionName: 'content-frame',
           paddingRight: '80px',
           paddingTop: '40px',
           fontFamily: 'var(--font-sans)',
@@ -22,8 +22,8 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
 
   return (
     <div
+      className="content-frame"
       style={{
-        viewTransitionName: 'content-frame',
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '8px',
