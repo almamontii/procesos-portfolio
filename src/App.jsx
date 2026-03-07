@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback } from 'react'
+import { flushSync } from 'react-dom'
 import { artworks as seedArtworks } from './data/artworks.js'
 import Header from './components/Header.jsx'
 import HeroText from './components/HeroText.jsx'
@@ -51,6 +52,18 @@ export default function App() {
     saveArtworks(next)
   }
 
+  const handleYearChange = year => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        flushSync(() => setActiveYear(year))
+      })
+    } else {
+      setActiveYear(year)
+    }
+  }
+
+  const handleCloseLightbox = useCallback(() => setSelectedArtwork(null), [])
+
   return (
     <div
       style={{
@@ -60,7 +73,7 @@ export default function App() {
         position: 'relative',
       }}
     >
-      <Header activeYear={activeYear} onYearChange={setActiveYear} years={years} />
+      <Header activeYear={activeYear} onYearChange={handleYearChange} years={years} />
       <HeroText />
       <ArtworkGrid
         artworks={artworks}
@@ -68,7 +81,7 @@ export default function App() {
         onArtworkClick={setSelectedArtwork}
       />
       <SidebarName />
-      <Lightbox artwork={selectedArtwork} onClose={() => setSelectedArtwork(null)} />
+      <Lightbox artwork={selectedArtwork} onClose={handleCloseLightbox} />
       <AdminPanel
         artworks={artworks}
         onAddArtwork={handleAddArtwork}

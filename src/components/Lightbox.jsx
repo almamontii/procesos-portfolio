@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Lightbox({ artwork, onClose }) {
   useEffect(() => {
+    if (!artwork) return
     const handleKey = e => {
       if (e.key === 'Escape') onClose()
     }
@@ -12,7 +13,7 @@ export default function Lightbox({ artwork, onClose }) {
       window.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
-  }, [onClose])
+  }, [artwork, onClose])
 
   return (
     <AnimatePresence>
@@ -105,7 +106,6 @@ export default function Lightbox({ artwork, onClose }) {
             {/* Image + vertical technique */}
             <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
               <motion.img
-                layoutId={`artwork-${artwork.id}`}
                 src={artwork.image}
                 alt={artwork.title}
                 style={{

@@ -27,3 +27,21 @@ body {
 .font-sans {
   font-family: var(--font-sans);
 }
+
+@keyframes slide-out {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-32px); opacity: 0; }
+}
+
+@keyframes slide-in {
+  from { transform: translateX(32px); opacity: 0; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+
+::view-transition-old(content-frame) {
+  animation: slide-out 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+::view-transition-new(content-frame) {
+  animation: slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

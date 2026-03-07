@@ -7,6 +7,7 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
     return (
       <div
         style={{
+          viewTransitionName: 'content-frame',
           paddingRight: '80px',
           paddingTop: '40px',
           fontFamily: 'var(--font-sans)',
@@ -22,6 +23,7 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
   return (
     <div
       style={{
+        viewTransitionName: 'content-frame',
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '8px',

@@ -24,9 +24,7 @@ export default function HeroText() {
           maxWidth: '480px',
         }}
       >
-        Un catálogo progresivo de obra. Pintura, técnica mixta y exploración
-        material ordenada por año. Cada serie es parte de un proceso continuo
-        de investigación plástica.
+        Mi avance en años logrando comunicando lo que siento y veo mediante lo que fui aprendiendo (:
       </p>
     </div>
   )
