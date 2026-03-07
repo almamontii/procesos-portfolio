@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
-import { flushSync } from 'react-dom'
+import { AnimatePresence, motion } from 'framer-motion'
 import { artworks as seedArtworks } from './data/artworks.js'
 import Header from './components/Header.jsx'
 import HeroText from './components/HeroText.jsx'
@@ -52,16 +52,6 @@ export default function App() {
     saveArtworks(next)
   }
 
-  const handleYearChange = year => {
-    if (document.startViewTransition) {
-      document.startViewTransition(() => {
-        flushSync(() => setActiveYear(year))
-      })
-    } else {
-      setActiveYear(year)
-    }
-  }
-
   const handleCloseLightbox = useCallback(() => setSelectedArtwork(null), [])
 
   return (
@@ -73,13 +63,23 @@ export default function App() {
         position: 'relative',
       }}
     >
-      <Header activeYear={activeYear} onYearChange={handleYearChange} years={years} />
+      <Header activeYear={activeYear} onYearChange={setActiveYear} years={years} />
       <HeroText />
-      <ArtworkGrid
-        artworks={artworks}
-        activeYear={activeYear}
-        onArtworkClick={setSelectedArtwork}
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeYear}
+          initial={{ x: 48, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -48, opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <ArtworkGrid
+            artworks={artworks}
+            activeYear={activeYear}
+            onArtworkClick={setSelectedArtwork}
+          />
+        </motion.div>
+      </AnimatePresence>
       <SidebarName />
       <Lightbox artwork={selectedArtwork} onClose={handleCloseLightbox} />
       <AdminPanel

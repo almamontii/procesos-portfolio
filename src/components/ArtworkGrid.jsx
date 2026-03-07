@@ -6,7 +6,6 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
   if (filtered.length === 0) {
     return (
       <div
-        className="content-frame"
         style={{
           paddingRight: '80px',
           paddingTop: '40px',
@@ -22,7 +21,6 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
 
   return (
     <div
-      className="content-frame"
       style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',

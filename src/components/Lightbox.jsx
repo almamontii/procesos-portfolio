@@ -18,46 +18,50 @@ export default function Lightbox({ artwork, onClose }) {
   return (
     <AnimatePresence>
       {artwork && (
-        <motion.div
-          key="lightbox-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          onClick={onClose}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(245, 245, 240, 0.96)',
-            zIndex: 100,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '40px',
-          }}
-        >
-          {/* Inner container — stops click propagation */}
+        <>
+          {/* Backdrop — click cierra */}
           <motion.div
-            key="lightbox-content"
-            initial={{ opacity: 0, scale: 0.96, y: 12 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 12 }}
-            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-            onClick={e => e.stopPropagation()}
+            key="lightbox-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={onClose}
             style={{
-              width: '100%',
-              maxWidth: '900px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
+              position: 'fixed',
+              inset: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.15)',
+              zIndex: 100,
+            }}
+          />
+
+          {/* Panel lateral derecho */}
+          <motion.div
+            key="lightbox-panel"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: 'fixed',
+              right: 0,
+              top: 0,
+              bottom: 0,
+              width: '60%',
+              backgroundColor: '#f5f5f0',
+              zIndex: 101,
+              overflowY: 'auto',
+              padding: '40px 48px',
+              boxShadow: '-24px 0 48px rgba(0, 0, 0, 0.1)',
             }}
           >
-            {/* Top meta */}
+            {/* Header */}
             <div
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'baseline',
+                marginBottom: '32px',
               }}
             >
               <span
@@ -90,7 +94,7 @@ export default function Lightbox({ artwork, onClose }) {
               </button>
             </div>
 
-            {/* Title */}
+            {/* Título */}
             <h2
               style={{
                 fontFamily: 'var(--font-serif)',
@@ -98,14 +102,15 @@ export default function Lightbox({ artwork, onClose }) {
                 fontWeight: '400',
                 color: '#1a1a1a',
                 lineHeight: '1.1',
+                marginBottom: '24px',
               }}
             >
               {artwork.title}
             </h2>
 
-            {/* Image + vertical technique */}
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-              <motion.img
+            {/* Imagen + técnica vertical */}
+            <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '24px' }}>
+              <img
                 src={artwork.image}
                 alt={artwork.title}
                 style={{
@@ -122,7 +127,6 @@ export default function Lightbox({ artwork, onClose }) {
                 }}
               />
 
-              {/* Vertical technique + dimensions */}
               <div
                 style={{
                   writingMode: 'vertical-rl',
@@ -143,28 +147,20 @@ export default function Lightbox({ artwork, onClose }) {
               </div>
             </div>
 
-            {/* Description */}
-            <div
+            {/* Descripción */}
+            <p
               style={{
-                maxHeight: '120px',
-                overflowY: 'auto',
-                paddingRight: '8px',
+                fontFamily: 'var(--font-serif)',
+                fontSize: '13px',
+                lineHeight: '1.75',
+                color: '#333',
+                fontWeight: '400',
               }}
             >
-              <p
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '13px',
-                  lineHeight: '1.75',
-                  color: '#333',
-                  fontWeight: '400',
-                }}
-              >
-                {artwork.description}
-              </p>
-            </div>
+              {artwork.description}
+            </p>
           </motion.div>
-        </motion.div>
+        </>
       )}
     </AnimatePresence>
   )
