@@ -151,7 +151,7 @@ export default function Lightbox({ artwork, onClose }) {
             <p
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '13px',
+                fontSize: '15px',
                 lineHeight: '1.75',
                 color: '#333',
                 fontWeight: '400',
