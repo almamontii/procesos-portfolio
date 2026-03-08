@@ -47,7 +47,7 @@ export default function Lightbox({ artwork, onClose }) {
               right: 0,
               top: 0,
               bottom: 0,
-              width: '60%',
+              width: '65%',
               backgroundColor: '#f5f5f0',
               zIndex: 101,
               overflowY: 'auto',

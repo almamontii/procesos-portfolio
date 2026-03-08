@@ -35,42 +35,6 @@ export const artworks = [
     description: "Lo que queda después del proceso. El residuo no como descarte sino como esencia, como la parte más honesta de cualquier práctica artística.",
     image: "/images/obra-4.jpg"
   },
-  {
-    id: 5,
-    year: 2025,
-    title: "Serie Azul I",
-    technique: "Acrílico sobre tela",
-    dimensions: "90 × 90 cm",
-    description: "Primera obra de una serie exploratoria sobre el color azul y sus connotaciones emocionales en la cultura rioplatense.",
-    image: "/images/obra-5.jpg"
-  },
-  {
-    id: 6,
-    year: 2025,
-    title: "Palimpsesto",
-    technique: "Óleo sobre tela",
-    dimensions: "120 × 80 cm",
-    description: "Capas de escritura sobre escritura, imagen sobre imagen. El palimpsesto como método y como metáfora de la memoria colectiva.",
-    image: "/images/obra-6.jpg"
-  },
-  {
-    id: 7,
-    year: 2025,
-    title: "Campo Abierto",
-    technique: "Técnica mixta",
-    dimensions: "100 × 100 cm",
-    description: "La pampa como fondo psicológico. El horizonte infinito y la soledad luminosa del paisaje argentino.",
-    image: "/images/obra-7.jpg"
-  },
-  {
-    id: 8,
-    year: 2024,
-    title: "Interior I",
-    technique: "Óleo sobre tela",
-    dimensions: "70 × 50 cm",
-    description: "El primero de una serie de interiores imaginarios, espacios que podrían existir pero no existen.",
-    image: "/images/obra-8.jpg"
-  },
 ]
 
 export const years = [...new Set(artworks.map(a => a.year))].sort((a, b) => b - a)

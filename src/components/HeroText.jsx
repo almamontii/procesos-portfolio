@@ -24,7 +24,7 @@ export default function HeroText() {
           maxWidth: '480px',
         }}
       >
-        Mi avance en años logrando comunicando lo que siento y veo mediante lo que fui aprendiendo (:
+        Mi avance en años logrando comunicar lo que siento y veo mediante lo que fui aprendiendo (:
       </p>
     </div>
   )
