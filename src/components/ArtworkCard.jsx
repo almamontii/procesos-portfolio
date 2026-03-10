@@ -53,7 +53,6 @@ export default function ArtworkCard({ artwork, onClick }) {
             textAlign: 'center',
             padding: '0 16px',
             letterSpacing: '0.02em',
-            textTransform: 'capitalize',
           }}
         >
           {artwork.title}

@@ -48,7 +48,7 @@ export default function Lightbox({ artwork, onClose }) {
               top: 0,
               bottom: 0,
               width: '65%',
-              backgroundColor: '#F7F7F7',
+              backgroundColor: '#f5f5f0',
               zIndex: 101,
               overflowY: 'auto',
               padding: '40px 48px',
@@ -103,7 +103,6 @@ export default function Lightbox({ artwork, onClose }) {
                 color: '#1a1a1a',
                 lineHeight: '1.1',
                 marginBottom: '24px',
-                textTransform: 'capitalize',
               }}
             >
               {artwork.title}
@@ -119,7 +118,7 @@ export default function Lightbox({ artwork, onClose }) {
                   maxHeight: '480px',
                   width: '100%',
                   objectFit: 'contain',
-                  backgroundColor: 'transparent',
+                  backgroundColor: '#ddd',
                   display: 'block',
                 }}
                 onError={e => {
