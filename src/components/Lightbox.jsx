@@ -118,7 +118,7 @@ export default function Lightbox({ artwork, onClose }) {
                   maxHeight: '480px',
                   width: '100%',
                   objectFit: 'contain',
-                  backgroundColor: '#ddd',
+                  backgroundColor: 'transparent',
                   display: 'block',
                 }}
                 onError={e => {
