@@ -32,7 +32,7 @@ export default function App() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundColor: '#FFF4E8',
+        backgroundColor: '#FFFFFF',
         padding: '32px 32px 80px 32px',
         position: 'relative',
       }}

@@ -48,7 +48,7 @@ export default function Lightbox({ artwork, onClose }) {
               top: 0,
               bottom: 0,
               width: '65%',
-              backgroundColor: '#FFF4E8',
+              backgroundColor: '#FFFFFF',
               zIndex: 101,
               overflowY: 'auto',
               padding: '40px 48px',
@@ -109,12 +109,13 @@ export default function Lightbox({ artwork, onClose }) {
               {artwork.title}
             </h2>
 
-            {/* Imagen */}
-            <div style={{ marginBottom: '24px' }}>
+            {/* Imagen + técnica vertical */}
+            <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '24px' }}>
               <img
                 src={artwork.image}
                 alt={artwork.title}
                 style={{
+                  flex: '1',
                   maxHeight: '480px',
                   width: '100%',
                   objectFit: 'contain',
@@ -126,14 +127,21 @@ export default function Lightbox({ artwork, onClose }) {
                   e.target.style.backgroundColor = '#c8c8c0'
                 }}
               />
+
               <div
                 style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
                   fontFamily: 'var(--font-sans)',
                   fontWeight: '300',
-                  fontSize: '12px',
+                  fontSize: '13px',
                   color: '#000',
-                  marginTop: '10px',
-                  letterSpacing: '0.02em',
+                  lineHeight: '1.5',
+                  flexShrink: 0,
+                  alignSelf: 'stretch',
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  paddingBottom: '4px',
                 }}
               >
                 {artwork.technique} — {artwork.dimensions}
