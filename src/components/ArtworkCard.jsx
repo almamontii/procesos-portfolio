@@ -13,7 +13,7 @@ export default function ArtworkCard({ artwork, onClick }) {
         aspectRatio: '1 / 1',
         overflow: 'hidden',
         cursor: 'pointer',
-        backgroundColor: '#ddd',
+        backgroundColor: 'var(--bg-placeholder)',
       }}
     >
       <img

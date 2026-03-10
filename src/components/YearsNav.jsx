@@ -6,7 +6,7 @@ export default function YearsNav({ activeYear, onYearChange, years }) {
           fontFamily: 'var(--font-serif)',
           fontSize: '13px',
           fontWeight: '400',
-          color: '#000',
+          color: 'var(--text-primary)',
           marginRight: '4px',
         }}
       >
@@ -20,7 +20,7 @@ export default function YearsNav({ activeYear, onYearChange, years }) {
             fontFamily: 'var(--font-serif)',
             fontSize: '13px',
             fontWeight: activeYear === year ? '500' : '400',
-            color: activeYear === year ? 'var(--color-red)' : '#1a1a1a',
+            color: activeYear === year ? 'var(--color-red)' : 'var(--text-secondary)',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
@@ -31,7 +31,7 @@ export default function YearsNav({ activeYear, onYearChange, years }) {
             if (activeYear !== year) e.target.style.color = 'var(--color-red)'
           }}
           onMouseLeave={e => {
-            if (activeYear !== year) e.target.style.color = '#1a1a1a'
+            if (activeYear !== year) e.target.style.color = 'var(--text-secondary)'
           }}
         >
           {year}

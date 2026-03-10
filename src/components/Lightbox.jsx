@@ -30,7 +30,7 @@ export default function Lightbox({ artwork, onClose }) {
             style={{
               position: 'fixed',
               inset: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.55)',
+              backgroundColor: 'var(--backdrop-lightbox)',
               zIndex: 100,
             }}
           />
@@ -48,11 +48,12 @@ export default function Lightbox({ artwork, onClose }) {
               top: 0,
               bottom: 0,
               width: '65%',
-              backgroundColor: '#FFFFFF',
+              backgroundColor: 'var(--bg-surface)',
               zIndex: 101,
               overflowY: 'auto',
               padding: '40px 48px',
-              boxShadow: '-24px 0 48px rgba(0, 0, 0, 0.1)',
+              boxShadow: '-24px 0 48px var(--shadow-lightbox)',
+              transition: 'background-color 0.3s ease',
             }}
           >
             {/* Header */}
@@ -71,7 +72,7 @@ export default function Lightbox({ artwork, onClose }) {
                   fontSize: '10px',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#000',
+                  color: 'var(--text-primary)',
                 }}
               >
                 Colecciones del {artwork.year}
@@ -85,7 +86,7 @@ export default function Lightbox({ artwork, onClose }) {
                   fontFamily: 'var(--font-sans)',
                   fontSize: '11px',
                   fontWeight: '300',
-                  color: '#000',
+                  color: 'var(--text-primary)',
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                 }}
@@ -100,7 +101,7 @@ export default function Lightbox({ artwork, onClose }) {
                 fontFamily: 'var(--font-serif)',
                 fontSize: '30px',
                 fontWeight: '400',
-                color: '#000',
+                color: 'var(--text-primary)',
                 lineHeight: '1.1',
                 marginBottom: '24px',
                 textTransform: 'capitalize',
@@ -135,7 +136,7 @@ export default function Lightbox({ artwork, onClose }) {
                   fontFamily: 'var(--font-sans)',
                   fontWeight: '300',
                   fontSize: '13px',
-                  color: '#000',
+                  color: 'var(--text-primary)',
                   lineHeight: '1.5',
                   flexShrink: 0,
                   alignSelf: 'stretch',
@@ -154,7 +155,7 @@ export default function Lightbox({ artwork, onClose }) {
                 fontFamily: 'var(--font-serif)',
                 fontSize: '15px',
                 lineHeight: '1.75',
-                color: '#000',
+                color: 'var(--text-primary)',
                 fontWeight: '400',
               }}
             >

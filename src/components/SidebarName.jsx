@@ -11,7 +11,7 @@ export default function SidebarName() {
         fontSize: '30px',
         fontWeight: '400',
         letterSpacing: '0.02em',
-        color: '#000',
+        color: 'var(--text-primary)',
         zIndex: 10,
         userSelect: 'none',
       }}

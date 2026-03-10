@@ -4,6 +4,29 @@
   --font-serif: 'Lora', Georgia, serif;
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --color-red: #e63027;
+
+  --bg-primary: #FFFFFF;
+  --bg-page: #FAFAF8;
+  --bg-surface: #FFFFFF;
+  --text-primary: #000;
+  --text-secondary: #1a1a1a;
+  --bg-placeholder: #ddd;
+  --bg-error: #c8c8c0;
+  --shadow-lightbox: rgba(0, 0, 0, 0.1);
+  --backdrop-lightbox: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-page: #141414;
+  --bg-surface: #242424;
+  --text-primary: #e8e8e8;
+  --text-secondary: #bbb;
+  --bg-placeholder: #333;
+  --bg-error: #444;
+  --shadow-lightbox: rgba(0, 0, 0, 0.3);
+  --backdrop-lightbox: rgba(0, 0, 0, 0.7);
+  --color-red: #ff4a42;
 }
 
 * {
@@ -15,9 +38,10 @@
 body {
   font-family: var(--font-sans);
   font-weight: 300;
-  background-color: #FAFAF8;
-  color: #000;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-serif {

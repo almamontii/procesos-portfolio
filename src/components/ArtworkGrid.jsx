@@ -11,7 +11,7 @@ export default function ArtworkGrid({ artworks, activeYear, onArtworkClick }) {
           paddingTop: '40px',
           fontFamily: 'var(--font-sans)',
           fontSize: '13px',
-          color: '#000',
+          color: 'var(--text-primary)',
         }}
       >
         No hay obras registradas para {activeYear}.

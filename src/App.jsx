@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { artworks as seedArtworks } from './data/artworks.js'
 import Header from './components/Header.jsx'
@@ -25,6 +25,15 @@ export default function App() {
   )
   const [selectedArtwork, setSelectedArtwork] = useState(null)
   const [activeYear, setActiveYear] = useState(years[0] ?? new Date().getFullYear())
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('procesos_theme')
+    return saved === 'dark'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
+    localStorage.setItem('procesos_theme', darkMode ? 'dark' : 'light')
+  }, [darkMode])
 
   const handleCloseLightbox = useCallback(() => setSelectedArtwork(null), [])
 
@@ -32,12 +41,13 @@ export default function App() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'var(--bg-primary)',
         padding: '32px 32px 80px 32px',
         position: 'relative',
+        transition: 'background-color 0.3s ease',
       }}
     >
-      <Header activeYear={activeYear} onYearChange={setActiveYear} years={years} />
+      <Header activeYear={activeYear} onYearChange={setActiveYear} years={years} darkMode={darkMode} onToggleDark={() => setDarkMode(d => !d)} />
       <HeroText />
       <AnimatePresence mode="wait">
         <motion.div

@@ -8,7 +8,7 @@ export default function HeroText() {
           fontSize: '60px',
           lineHeight: '1',
           letterSpacing: '-0.02em',
-          color: '#000',
+          color: 'var(--text-primary)',
           marginBottom: '12px',
         }}
       >
@@ -20,7 +20,7 @@ export default function HeroText() {
           fontWeight: '300',
           fontSize: '13px',
           lineHeight: '1.6',
-          color: '#000',
+          color: 'var(--text-primary)',
           maxWidth: '480px',
         }}
       >
