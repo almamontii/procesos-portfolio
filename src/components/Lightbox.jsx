@@ -103,6 +103,7 @@ export default function Lightbox({ artwork, onClose }) {
                 color: '#1a1a1a',
                 lineHeight: '1.1',
                 marginBottom: '24px',
+                textTransform: 'capitalize',
               }}
             >
               {artwork.title}
