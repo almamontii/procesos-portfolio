@@ -30,7 +30,7 @@ export default function Lightbox({ artwork, onClose }) {
             style={{
               position: 'fixed',
               inset: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.15)',
+              backgroundColor: 'rgba(0, 0, 0, 0.55)',
               zIndex: 100,
             }}
           />
