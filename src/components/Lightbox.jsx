@@ -71,7 +71,7 @@ export default function Lightbox({ artwork, onClose }) {
                   fontSize: '10px',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#888',
+                  color: '#000',
                 }}
               >
                 Colecciones del {artwork.year}
@@ -85,7 +85,7 @@ export default function Lightbox({ artwork, onClose }) {
                   fontFamily: 'var(--font-sans)',
                   fontSize: '11px',
                   fontWeight: '300',
-                  color: '#888',
+                  color: '#000',
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                 }}
@@ -100,7 +100,7 @@ export default function Lightbox({ artwork, onClose }) {
                 fontFamily: 'var(--font-serif)',
                 fontSize: '30px',
                 fontWeight: '400',
-                color: '#1a1a1a',
+                color: '#000',
                 lineHeight: '1.1',
                 marginBottom: '24px',
                 textTransform: 'capitalize',
@@ -135,7 +135,7 @@ export default function Lightbox({ artwork, onClose }) {
                   fontFamily: 'var(--font-sans)',
                   fontWeight: '300',
                   fontSize: '13px',
-                  color: '#555',
+                  color: '#000',
                   lineHeight: '1.5',
                   flexShrink: 0,
                   alignSelf: 'stretch',
@@ -154,7 +154,7 @@ export default function Lightbox({ artwork, onClose }) {
                 fontFamily: 'var(--font-serif)',
                 fontSize: '15px',
                 lineHeight: '1.75',
-                color: '#333',
+                color: '#000',
                 fontWeight: '400',
               }}
             >

@@ -6,7 +6,7 @@ export default function YearsNav({ activeYear, onYearChange, years }) {
           fontFamily: 'var(--font-serif)',
           fontSize: '13px',
           fontWeight: '400',
-          color: '#1a1a1a',
+          color: '#000',
           marginRight: '4px',
         }}
       >

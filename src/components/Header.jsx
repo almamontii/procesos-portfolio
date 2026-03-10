@@ -17,7 +17,7 @@ export default function Header({ activeYear, onYearChange, years }) {
           fontWeight: '300',
           fontSize: '10px',
           letterSpacing: '0.05em',
-          color: '#1a1a1a',
+          color: '#000',
           paddingTop: '2px',
         }}
       >
